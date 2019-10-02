@@ -1,1 +1,1 @@
-um arquivo qualquer para testar se está gerando o hash
+aqui testamos a geração de hash de um arquivo!!!
