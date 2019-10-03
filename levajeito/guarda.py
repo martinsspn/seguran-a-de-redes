@@ -122,12 +122,12 @@ elif opcao == 1: #opção = 1 -> executando a opção -t
             if dicionario.get(linha[:len(linha[:len(linha)-36])]) != None:
                 if dicionario.get(linha[:len(linha[:len(linha)-36])]) != linha[len(linha)-33:len(linha)-1]: #se o arquivo está na lista e no dicionario mas
                     if saida == '': #o arquivo está diferente, então o arquivo foi alterado
-                        print ("O arquivo " + linha[:len(linha[:len(linha)-36])] + " foi alterado !!!")
+                        print ('\33[33m'+"O arquivo " + linha[:len(linha[:len(linha)-36])] + " foi alterado !!!"+'\33[0;0m')
                     else:
                         arq_saida.write("O arquivo " + linha[:len(linha[:len(linha)-36])] + " foi alterado !!!\n")
             else: #se o arquivo está na lista mas não está no dicionario então o arquivo foi removido
                 if saida == '':
-                    print("O arquivo " + linha[:len(linha[:len(linha)-36])] + " foi removido !!!")
+                    print('\033[31m'+"O arquivo " + linha[:len(linha[:len(linha)-36])] + " foi removido !!!" +'\033[0;0m') 
                 else:
                     arq_saida.write("O arquivo " + linha[:len(linha[:len(linha)-36])] + " foi removido !!!\n")
         for i in arquivos:
@@ -139,9 +139,9 @@ elif opcao == 1: #opção = 1 -> executando a opção -t
                     novoArquivo = False
             if novoArquivo == True: #se o arquivo estiver no dicionario mas não estiver na lista então esse arquivo foi adicionado
                 if saida == '': #logo, quando um novo arquivo não estiver na lista novo arquivo vai ser True e entrara no if acima
-                    print ("O arquivo " + i + " foi adicionado!!!")#imprime na tela
+                    print ('\033[32m'+ "O arquivo " + i + " foi adicionado!!!"+'\033[0;0m') #imprime na tela
                 else:
-                    arq_saida.write("O arquivo " + i + " foi adicionado!!!\n")#imprime no arquivo de saida
+                    arq_saida.write("O arquivo " + i + " foi adicionado!!!\n") #imprime no arquivo de saida
 
     else: #se o tracking for falso então a pasta não está sendo monitorada
         if saida == '': 
