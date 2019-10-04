@@ -7,7 +7,7 @@ import hmac
 
 def filesList(diretorio): #Função para adicionar todos os arquivos da pasta em uma lista
     files = []
-    for r, d, f in os.walk(diretorio):
+    for r, d, f in os.walk(diretorio): 
         for file in f:
             if str(os.path.join(r, file)) == str(diretorio+'/.guarda.txt'):
                 continue
